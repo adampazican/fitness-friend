@@ -30,6 +30,8 @@ function setup(){
         userId INT NOT NULL,
         PRIMARY KEY(ID)
     );`
+
+    connection.query(activitiesTable)
 }
 
 module.exports = connection
