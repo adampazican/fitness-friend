@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <title>Registrácia</title>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="/register" method="POST" class="formular">
+            <legend>Registrácia</legend>
+            <div>
+                <input type="email" placeholder="email" name="username" required>
+            </div>
+            <div>
+                <input type="password" placeholder="heslo" name="password" required>
+            </div>
+            <div class="buttons">
+                <button type="submit">Zaregistruj</button>
+                <button type="submit">Reset</button>
+                <a href="/"><button type="button">Späť</button></a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

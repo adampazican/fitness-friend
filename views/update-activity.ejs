@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <title>Upraviť aktivitu</title>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="/activities/<%= activity.id %>" method="POST" class="formular">
+            <% include ./partials/header %>
+            <legend>Upraviť aktivitu</legend>
+            <div>
+                <input placeholder="popis" type="text" name="description" value="<%= activity.description || '' %>">
+                <select name="type" value="<%= activity.type %>">
+                    <option value="beh" 
+                        <% if(activity.type === "beh") { %>
+                            selected
+                        <% } %>
+                    >beh</option>
+                    <option value="chôdza"
+                        <% if(activity.type === "chôdza") { %>
+                            selected
+                        <% } %>
+                    >chôdza</option>
+                    <option value="crossfit"
+                        <% if(activity.type === "crossfit") { %>
+                            selected
+                        <% } %>
+                    >crossfit</option>
+                    <option value="workout"
+                        <% if(activity.type === "workout") { %>
+                            selected
+                        <% } %>
+                    >workout</option>
+                    <option value="jóga"
+                        <% if(activity.type === "jóga") { %>
+                            selected
+                        <% } %>
+                    >jóga</option>
+                </select>
+            </div>
+            <div>
+                <input placeholder="trvanie" type="number" name="duration1" value="<%= activity.duration.split(' ')[0] %>">
+                <select name="duration2" value="<%= activity.duration.split(' ')[1] %>">
+                    <option value="sekúnd">sekúnd</option>
+                    <option value="minút">minút</option>
+                    <option value="hodín">hodín</option>
+                </select>
+            </div>
+            <div>
+                <input placeholder="dátum" type="date" name="date" required 
+                    value="<%= activity.date %>"
+                    pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                <input placeholder="čas" type="time" name="time" required value="<%= activity.time %>">
+            </div>
+            <div>
+                <input placeholder="miesto" type="text" name="place" value="<%= activity.place || '' %>">
+            </div>
+
+
+            <div class="buttons">
+                <button type="submit">Upraviť</button>
+            </div>
+        </form>
+        <a href="/"><button>Späť</button></a>
+    </div>
+</body>
+</html>

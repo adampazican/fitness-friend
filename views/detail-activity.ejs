@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <ul class="activities">
+            <% include ./partials/header %>
+                <li class="activity">
+                    <p><%= activity.type %> <%= activity.date %> <%= activity.time %></p>
+                    <div class="flex">
+                        <img class="activity-logo" src="/images/<%= activity.type %>.jpg" width="50px" height="50px"/>
+                        <div>
+                            <p><%= activity.place || '' %> <%= activity.duration %></p>
+                            <p><%= activity.description || '' %></p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="/detail/<%= activity.id %>"><button>Detail</button></a>
+                        <a href="/update/<%= activity.id %>"><button>Upraviť</button></a>
+                        <a href="/remove/<%= activity.id %>"><button>Zmazať</button></a>
+                    </div>
+                </li>
+        </ul>
+    </div>
+</body>
+</html>

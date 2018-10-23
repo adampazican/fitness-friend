@@ -1,0 +1,133 @@
+*{ margin:0; padding: 0; }
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+
+.wrapper .formular{
+    margin: 1rem 0 1rem 0;
+    border: 1px solid #e0e0e0;
+    background-color: #FFF;
+    border-radius: 2px;
+	overflow: hidden;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.wrapper .formular legend{
+    margin-bottom: 5px;
+}
+
+.wrapper .formular div input{
+    border: none;
+    border-bottom: 1px solid #90a4ae;
+    outline: 0;
+    padding: 8px;
+    background-color: transparent;
+    color: #26a69a;
+}
+
+
+.wrapper .formular div:not(.header){
+    padding-bottom: 3px;
+}
+
+button{
+    margin-top: 8px;
+    cursor: pointer;
+    color: #FFF;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    font-size: 14px;
+    outline: 0;
+    border: none;
+    border-radius: 2px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 5px;
+    text-transform: uppercase;
+}
+
+.wrapper .formular input::placeholder{
+    color: #90a4ae;
+}
+
+.wrapper .formular select{
+    background-color: #26a69a;
+    border: none;
+    color: white;
+    padding: 8px;
+}
+
+.wrapper .formular div > *, .wrapper .formular div a button{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.wrapper .formular div > *:only-child{
+    width: 100%;
+}
+
+.activities, .header{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0 1rem 0;
+    border: 1px solid #e0e0e0;
+    background-color: #FFF;
+    border-radius: 2px;
+	overflow: hidden;
+    padding: 10px 32px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.activity{
+    display: inline-block;
+    width: 100%;
+    margin-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.activity:last-of-type{
+    border-bottom: none;
+}
+
+.activity-logo{
+    margin-right: 8px;
+}
+
+.flex{
+    display: flex;
+}
+
+.header{
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #26a69a;
+    color: white;
+}
+
+.header-paginator{
+    justify-content: start;
+}
+
+.header a{
+    text-align: right;
+    text-decoration: none;
+    color: white;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+
+.filter-select, .filter-button{
+    background-color: #26a69a;
+    border: none;
+    color: white;
+}

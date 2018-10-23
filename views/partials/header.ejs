@@ -1,0 +1,24 @@
+<div class="header">
+    <p><%= user.username || '' %></p>
+    <% if(locals.activities) {%>
+        <a href="/new">Nová aktivita</a>
+    <% } %>
+    <a href="/logout">Odhlásiť</a>
+</div>
+
+<% if(locals.activities) {%>
+    <div class="header">
+        <p>Filter</p>
+        <form action="/activities">
+            <select name="type" class="filter-select">
+                <option value="all">všetko</option>
+                <option value="beh">beh</option>
+                <option value="chôdza">chôdza</option>
+                <option value="crossfit">crossfit</option>
+                <option value="workout">workout</option>
+                <option value="jóga">jóga</option>
+            </select>
+            <input type="submit" value="Filtruj" class="filter-button">
+        </form>
+    </div>
+<% } %>

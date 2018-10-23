@@ -1,0 +1,38 @@
+<div class="header">
+    <a href="?activity=true">Aktivity</a>
+    <a href="?user=true">Užívateľ</a>
+    <a href="?type=all">Filter</a>
+    <a href="?paginator=true">Stránkovanie</a>
+</div>
+
+<% if(locals.filter) { %>
+    <div class="header">
+        <p>Filter</p>
+        <form action="">
+            <select name="type" class="filter-select">
+                <option value="all">všetko</option>
+                <option value="beh">beh</option>
+                <option value="chôdza">chôdza</option>
+                <option value="crossfit">crossfit</option>
+                <option value="workout">workout</option>
+                <option value="jóga">jóga</option>
+            </select>
+            <input type="submit" value="Filtruj" class="filter-button">
+        </form>
+    </div>
+<% } else if(locals.user_menu) { %>
+    <div class="header">
+        <p><%= user.username || '' %></p>
+        <a href="/logout">Odhlásiť</a>
+    </div>
+<% } else if(locals.activity_menu) { %>
+    <div class="header">
+        <a href="/new">Nová aktivita</a>
+    </div>
+<% } else { %>
+    <div class="header header-paginator">
+        <% for(var i = 1; i <= numberOfPages; i++){ %>
+            <a href="/page-<%= i %>"><%= i %></a>
+        <% } %>
+    </div>
+<% } %>
