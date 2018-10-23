@@ -7,6 +7,7 @@ const { createUser, showRegister, showLogin} = require('./controllers/user-contr
 const { showActivities, showNewActivity, showDetailActivity, showUpdateActivity,
     createActivity, removeActivity, updateActivity } = require('./controllers/activity-controller')
 const { passport } = require('./authentication/authentication')
+const apiRouter = require('./api/routes')
 
 const app = express()
 
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded({
 app.use(session({ secret: 'secret' }))
 app.use(passport.initialize())
 app.use(passport.session())
+app.use('/api', apiRouter)
 
 app.get('/', isAuthenticated, showActivities)
 app.get('/page-:page', isAuthenticated, showActivities)

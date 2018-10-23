@@ -36,8 +36,10 @@ class Activity{
         await db.query(activitySQL)
     }
 
-    async getActivity(id){
-        const activitySQL = `SELECT * FROM activities WHERE id=${id} LIMIT 1;`
+    async getActivity(id, userId){
+        const userIdFilter = userId ? `AND userId='${userId}'` : ''
+        const activitySQL = `SELECT * FROM activities WHERE id=${id} ${userIdFilter} LIMIT 1;`
+        console.log(activitySQL)
         return (await db.query(activitySQL))[0]
     }
 
