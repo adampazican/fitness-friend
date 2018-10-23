@@ -7,6 +7,10 @@ const { passport } = require('../authentication/authentication')
 const activity = new Activity()
 const user = new User()
 
+
+/**
+ * Pre autentifikaciu api requestov potrebujeme v body parametre username a password
+ */
 const authenticate = async (req, res, next) => {
     const { username, password } = req.body
     
